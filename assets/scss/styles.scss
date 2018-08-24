@@ -1,0 +1,24 @@
+$beige: beige;
+
+#list_users {
+  li {
+    background-color: antiquewhite;
+    margin-bottom: 10px;
+  }
+
+  li .row {
+    margin: 15px;
+  }
+
+  a {
+    margin-left: 20px;
+    padding: 15px;
+    border-radius: 3px;
+  }
+}
+
+#profile_card {
+  width: 40rem;
+  background-color: $beige;
+  padding: 25px;
+}

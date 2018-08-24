@@ -5,13 +5,17 @@ export default class Users extends AjaxGet {
 
     displayUsers(url) {
 
-        let iduser = [];
         super.ajaxGet(url, (response) => {
             const users = JSON.parse(response);
 
             const listUsers = document.getElementById('list_users');
 
             for (let user of users) {
+
+                let lastName = user.lastName;
+                const lastNameUpper = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+                let firstName = user.firstName;
+                const firstNameUpper = firstName.charAt(0).toUpperCase() + firstName.slice(1);
 
                 const liElt = document.createElement('li');
                 liElt.classList.add('list-group-item');
@@ -23,13 +27,12 @@ export default class Users extends AjaxGet {
 
                 const divElt = document.createElement('div');
                 divElt.classList.add('row');
-                divElt.textContent = `${user.firstName} ${user.lastName}`;
+                divElt.textContent = `${firstNameUpper} ${lastNameUpper}`;
 
                 divElt.appendChild(btnElt);
                 liElt.appendChild(divElt);
 
                 listUsers.appendChild(liElt);
-                iduser.push(user.userId);
 
                 btnElt.addEventListener('click', () => {
                     const profile = new Profile();

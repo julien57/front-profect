@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <title>Front Project</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-
+<header>
     <div class="container">
         <h1>Users List</h1>
+    </div>
+</header>
+
+    <div class="container">
+
         <ul class="list-group" id="list_users"></ul>
-        <div class="card" style="width: 18rem;" id="profile_card">
+
+        <div class="card" id="profile_card">
             <img class="card-img-top" src="" alt="Card image cap" id="img_card">
             <div class="card-body">
                 <h3 class="card-title"></h3>
@@ -17,8 +24,15 @@
                 <a href="/" class="btn btn-primary" id="btn-return"><- Return</a>
             </div>
         </div>
+
     </div>
 
+<footer>
+    <div class="container">
+        <p>List of Users it created by Julien Montel for O.A.T</p>
+    </div>
+</footer>
 <script type="module" src="js/script.js"></script>
+<script src="./js/bundle.js"></script> <!-- For development -->
 </body>
 </html>

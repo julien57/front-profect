@@ -31,7 +31,7 @@ export default class Profile extends AjaxGet {
             emailElt.textContent = 'Email : ' + user.email;
 
             const genderElt = document.createElement('li');
-            genderElt.textContent = 'Gender' + user.gender;
+            genderElt.textContent = 'Gender : ' + user.gender;
 
             const addressElt = document.createElement('li');
             addressElt.textContent = 'Address : ' + user.address;
