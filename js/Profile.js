@@ -22,8 +22,6 @@ export default class Profile extends AjaxGet {
             const h5Elt = document.querySelector('h3');
             h5Elt.textContent = `${user.firstName} ${user.lastName}`;
 
-            const profil = document.getElementById('profile_description');
-
             const loginElt = document.createElement('li');
             loginElt.textContent = 'Login : ' + user.login;
 
@@ -35,6 +33,8 @@ export default class Profile extends AjaxGet {
 
             const addressElt = document.createElement('li');
             addressElt.textContent = 'Address : ' + user.address;
+
+            const profil = document.getElementById('profile_description');
 
             profil.appendChild(loginElt);
             profil.appendChild(emailElt);

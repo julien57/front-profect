@@ -13,9 +13,9 @@ export default class Users extends AjaxGet {
             for (let user of users) {
 
                 let lastName = user.lastName;
-                const lastNameUpper = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+                const lastNameUpper = Users.firstLetterUpper(lastName);
                 let firstName = user.firstName;
-                const firstNameUpper = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                const firstNameUpper = Users.firstLetterUpper(firstName);
 
                 const liElt = document.createElement('li');
                 liElt.classList.add('list-group-item');
@@ -40,5 +40,9 @@ export default class Users extends AjaxGet {
                 })
             }
         });
+    }
+
+    static firstLetterUpper(mot) {
+        return mot.charAt(0).toUpperCase() + mot.slice(1);
     }
 }

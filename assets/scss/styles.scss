@@ -1,5 +1,15 @@
 $beige: beige;
 
+header {
+  background-color: dimgrey;
+  margin-bottom: 30px;
+
+  h1 {
+    text-align: center;
+    color: white;
+  }
+}
+
 #list_users {
   li {
     background-color: antiquewhite;
@@ -21,4 +31,13 @@ $beige: beige;
   width: 40rem;
   background-color: $beige;
   padding: 25px;
+  display: none;
+}
+
+footer {
+  height: 150px;
+  background-color: ghostwhite;
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center;
 }

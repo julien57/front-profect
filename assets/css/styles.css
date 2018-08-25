@@ -1,6 +1,9 @@
-/* Normally, I create several SCSS files, especially for the variables, effects, components of the
-template (header, footer,..). Since it's a small project, I added only one file.
- */
+header {
+  background-color: dimgrey;
+  margin-bottom: 30px; }
+  header h1 {
+    text-align: center;
+    color: white; }
 
 #list_users li {
   background-color: antiquewhite;
@@ -17,4 +20,12 @@ template (header, footer,..). Since it's a small project, I added only one file.
 #profile_card {
   width: 40rem;
   background-color: beige;
-  padding: 25px; }
+  padding: 25px;
+  display: none; }
+
+footer {
+  height: 150px;
+  background-color: ghostwhite;
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center; }
