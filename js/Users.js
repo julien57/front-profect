@@ -3,12 +3,24 @@ import AjaxGet from "./AjaxGet.js";
 
 export default class Users extends AjaxGet {
 
-    displayUsers(url) {
+    displayUsers(url, limit = 20, offset = 0, name) {
 
-        super.ajaxGet(url, (response) => {
+        let apiUrl;
+        if (name) {
+            apiUrl = url+'?name='+name+'&limit='+limit+'&offset='+offset;
+
+        } else {
+            apiUrl = url+'?limit='+limit+'&offset='+offset;
+        }
+
+        super.ajaxGet(apiUrl, (response) => {
             const users = JSON.parse(response);
 
             const listUsers = document.getElementById('list_users');
+
+            if (users.length <= 0) {
+                listUsers.textContent = 'No profiles found.';
+            }
 
             for (let user of users) {
 
@@ -27,7 +39,7 @@ export default class Users extends AjaxGet {
 
                 const divElt = document.createElement('div');
                 divElt.classList.add('row');
-                divElt.textContent = `${firstNameUpper} ${lastNameUpper}`;
+                divElt.textContent = `${user.userId} - ${firstNameUpper} ${lastNameUpper}`;
 
                 divElt.appendChild(btnElt);
                 liElt.appendChild(divElt);
@@ -42,7 +54,7 @@ export default class Users extends AjaxGet {
         });
     }
 
-    static firstLetterUpper(mot) {
-        return mot.charAt(0).toUpperCase() + mot.slice(1);
+    static firstLetterUpper(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
     }
 }

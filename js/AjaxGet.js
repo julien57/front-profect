@@ -3,7 +3,7 @@ export default class AjaxGet {
     ajaxGet(url, callback) {
         const req = new XMLHttpRequest();
         req.open('GET', url);
-        req.addEventListener('load', function () {
+        req.addEventListener('load', () => {
             if (req.status >= 200 && req.status < 400) {
                 callback(req.responseText);
             } else {
